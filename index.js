@@ -52,7 +52,6 @@ async function run() {
         const products = await productCollection.find({brand: brand}).toArray();
         res.json(products);
     })
-    
      app.post('products/:brand',async(req,res) =>{
         const allProductData = req.body;
         console.log(allProductData);
@@ -77,7 +76,7 @@ async function run() {
         const result = await cursor.toArray();
         res.send(result);
     })
-    
+
     app.delete('/delete/:id', async(req, res)=>{
         const deleteId = req.params.id;
         const query = {_id : new ObjectId(deleteId)}
